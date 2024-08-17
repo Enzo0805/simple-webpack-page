@@ -26,4 +26,29 @@ module.exports = {
       },
     }),
   ],
+  resolveLoader: {
+    // loader路径查找顺序从左往右
+    modules: ["node_modules", "./loaders"],
+  },
+  module: {
+    rules: [
+      {
+        test: /\.js$/,
+        use: [
+          {
+            loader: "adapt-console-loader",
+            options: {
+              prefix: "走上人生巅峰",
+            },
+          },
+          {
+            loader: "adapt-console-loader",
+            options: {
+              prefix: "升职加薪",
+            },
+          },
+        ],
+      },
+    ],
+  },
 };
